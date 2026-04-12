@@ -1,12 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swachh Nagar Tanakpur – Complaint Management System</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+    <div class="app-shell">
+        <section id="screen-splash" class="screen active">
+            <div class="splash-card">
+                <div class="logo-circle">SN</div>
+                <h1>Swachh Nagar Tanakpur</h1>
+                <p class="splash-tagline">Smart cleanliness reporting for your city.</p>
+                <p>Complaint Management System</p>
+                <div class="splash-loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
 
-<h1>Hello Himanshi 👋</h1>
-<p>My first website 🎉</p>
+        <section id="screen-login" class="screen login-screen">
+            <div class="card login-card">
+                <div class="login-top">
+                    <div class="user-icon" id="login-icon">👤</div>
+                    <div>
+                        <h2 id="login-title">User Login</h2>
+                        <p class="screen-subtitle">Sign in to report cleanliness issues in Tanakpur.</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">📧</span>
+                    <input id="login-username" type="text" placeholder="Email / Username / Phone" />
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">🔒</span>
+                    <input id="login-password" type="password" placeholder="Password" />
+                </div>
+                <div class="extras-row">
+                    <label class="remember"><input type="checkbox" id="remember-me" /> Remember me</label>
+                    <button id="forgot-password" class="link-text" type="button">Forgot Password?</button>
+                </div>
+                <button id="btn-login" class="primary">LOGIN</button>
+                <button id="btn-show-register" class="secondary">Register</button>
+                <p class="admin-hint" id="admin-hint"></p>
+                <p class="message" id="login-message"></p>
+            </div>
+        </section>
 
+        <section id="screen-register" class="screen">
+            <div class="card">
+                <h2>Register</h2>
+                <label for="register-name">Name</label>
+                <input id="register-name" type="text" placeholder="Enter full name" />
+                <label for="register-email">Email</label>
+                <input id="register-email" type="email" placeholder="Enter email" />
+                <label for="register-mobile">Mobile Number</label>
+                <input id="register-mobile" type="tel" placeholder="Enter mobile number" />
+                <label for="register-password">Password</label>
+                <input id="register-password" type="password" placeholder="Create a password" />
+                <button id="btn-register" class="primary">Register</button>
+                <div class="actions-row">
+                    <p>Already have an account?</p>
+                    <button id="btn-back-login" class="link">Login</button>
+                </div>
+                <p class="message" id="register-message"></p>
+            </div>
+        </section>
+
+        <section id="screen-dashboard" class="screen">
+            <div class="homepage-shell">
+                <div class="hero-banner">
+                    <div class="hero-copy">
+                        <span class="hero-pill">Swachh Nagar Tanakpur</span>
+                        <h2 id="dashboard-welcome">Make Tanakpur Clean & Green 🌿</h2>
+                        <p id="dashboard-date">Report issues, track progress, and improve your city.</p>
+                        <div class="hero-stats">
+                            <div id="stat-resolved">
+                                <strong id="stat-resolved-count">120+</strong>
+                                <span>Issues resolved</span>
+                            </div>
+                            <div id="stat-community">
+                                <strong id="stat-community-count">540</strong>
+                                <span>Community reports</span>
+                            </div>
+                        </div>
+                        <div class="scrolling-text">
+                            Welcome to Swachh Nagar Tanakpur! Report cleanliness issues and help keep our city clean. |
+                            Latest updates: New features added for better tracking. | Stay connected with your
+                            community.
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-image"></div>
+                    </div>
+                    <div class="hero-actions">
+                        <button id="btn-new-complaint" class="secondary small">New Complaint</button>
+                        <button id="btn-logout" class="secondary small">Logout</button>
+                    </div>
+                </div>
+
+                <div class="action-grid">
+                    <button id="btn-quick-report" class="action-card">
+                        <span>📝</span>
+                        <div>
+                            <strong>Report Complaint</strong>
+                            <p>Submit a new issue</p>
+                        </div>
+                    </button>
+                    <button id="btn-quick-status" class="action-card">
+                        <span>📋</span>
+                        <div>
+                            <strong>View Status</strong>
+                            <p>Track complaint progress</p>
+                        </div>
+                    </button>
+                    <button id="btn-quick-profile" class="action-card">
+                        <span>👤</span>
+                        <div>
+                            <strong>Your Profile</strong>
+                            <p>View account info</p>
+                        </div>
+                    </button>
+                    <button id="btn-quick-about-app" class="action-card">
+                        <span>ℹ️</span>
+                        <div>
+                            <strong>About App</strong>
+                            <p>Learn how it works</p>
+                        </div>
+                    </button>
+                    <button id="btn-quick-about-town" class="action-card">
+                        <span>🏙️</span>
+                        <div>
+                            <strong>About Tanakpur</strong>
+                            <p>Discover city highlights</p>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="feed-section">
+                    <div class="feed-header">
+                        <div>
+                            <h3>City Feed</h3>
+                            <p>See recent posts and community updates from Tanakpur.</p>
+                        </div>
+                    </div>
+
+                    <div class="post-create-card">
+                        <textarea id="feed-complaint-text" rows="2" placeholder="Write your complaint..."></textarea>
+                        <div class="post-options">
+                            <input id="feed-title" type="text" placeholder="Add Title" />
+                            <input id="feed-location" type="text" placeholder="Add Location" />
+                        </div>
+                        <div class="post-actions">
+                            <label class="upload-pill">Before Image<input id="feed-before-image" type="file"
+                                    accept="image/*" /></label>
+                            <label class="upload-pill">After Image<input id="feed-after-image" type="file"
+                                    accept="image/*" /></label>
+                            <button id="btn-post-complaint" class="primary small">Post Complaint</button>
+                        </div>
+                        <p class="message" id="feed-message"></p>
+                    </div>
+
+                    <div class="feed-list" id="feed-list"></div>
+                </div>
+            </div>
+
+            <div class="bottom-nav">
+                <button id="nav-home" class="nav-button active">🏠<span>Home</span></button>
+                <button id="nav-add" class="nav-button">➕<span>Add</span></button>
+                <button id="nav-status" class="nav-button">📊<span>Status</span></button>
+                <button id="nav-profile" class="nav-button">👤<span>Profile</span></button>
+            </div>
+        </section>
+
+        <section id="screen-complaint" class="screen">
+            <div class="card">
+                <h2>Complaint Registration</h2>
+                <label for="complaint-name">Name</label>
+                <input id="complaint-name" type="text" placeholder="Enter your name" />
+                <label for="complaint-location">Location</label>
+                <div class="location-row">
+                    <input id="complaint-location" type="text" placeholder="Enter location or use auto-detect" />
+                    <button id="btn-detect-location" class="small">Auto Detect</button>
+                </div>
+                <label for="complaint-type">Complaint Type</label>
+                <select id="complaint-type">
+                    <option value="Garbage">Garbage</option>
+                    <option value="Drainage">Drainage</option>
+                    <option value="Street Cleaning">Street Cleaning</option>
+                </select>
+                <label for="complaint-description">Description</label>
+                <textarea id="complaint-description" rows="4" placeholder="Describe the issue"></textarea>
+                <label for="complaint-image">Upload Image</label>
+                <input id="complaint-image" type="file" accept="image/*" />
+                <button id="btn-submit-complaint" class="primary">Submit Complaint</button>
+                <button id="btn-back-dashboard" class="link">Back to Dashboard</button>
+                <p class="message" id="complaint-message"></p>
+            </div>
+        </section>
+
+        <section id="screen-status" class="screen">
+            <div class="card">
+                <h2>Complaint Status</h2>
+                <div id="status-list" class="status-list"></div>
+                <button id="btn-refresh-status" class="secondary">Refresh</button>
+                <button id="btn-back-dashboard-2" class="link">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="screen-about" class="screen">
+            <div class="card about-card">
+                <h2>About Tanakpur</h2>
+                <p>Tanakpur is a beautiful town located in Champawat district of Uttarakhand, India. Known for its
+                    scenic beauty and proximity to the Sharda River, it's a gateway to the Kumaon region.</p>
+                <h3>Swachh Nagar Initiative</h3>
+                <p>Swachh Nagar Tanakpur aims to make our town cleaner and greener through community participation.
+                    Report issues and help us maintain hygiene standards.</p>
+                <h3>Future Plans for Cleanliness</h3>
+                <ul>
+                    <li>Expand waste management systems with smart bins and recycling centers</li>
+                    <li>Implement regular cleanliness drives in public areas</li>
+                    <li>Promote eco-friendly practices and awareness programs</li>
+                    <li>Partner with local authorities for better sanitation infrastructure</li>
+                    <li>Use technology for real-time monitoring and quick response</li>
+                </ul>
+                <button id="btn-back-dashboard-3" class="link">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="screen-profile" class="screen">
+            <div class="card profile-card">
+                <div class="dashboard-header">
+                    <div>
+                        <h2>Your Profile</h2>
+                        <p class="screen-subtitle">Your account details and recent activity.</p>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <p><strong>Name:</strong> <span id="profile-name">Citizen</span></p>
+                    <p><strong>Email:</strong> <span id="profile-email">user@example.com</span></p>
+                    <p><strong>Mobile:</strong> <span id="profile-mobile">0000000000</span></p>
+                    <p><strong>Status:</strong> <span id="profile-status">Active User</span></p>
+                </div>
+                <button id="btn-profile-logout" class="secondary">Logout</button>
+                <button id="btn-back-dashboard-5" class="link">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="screen-admin" class="screen">
+            <div class="card admin-card">
+                <div class="dashboard-header">
+                    <div>
+                        <h2>Admin Dashboard</h2>
+                        <p class="screen-subtitle">Secure access to complaint management and updates.</p>
+                    </div>
+                </div>
+                <div id="admin-complaints"></div>
+                <button id="btn-back-dashboard-4" class="link">Back to Dashboard</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
