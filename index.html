@@ -4,269 +4,314 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swachh Nagar Tanakpur – Complaint Management System</title>
+    <meta name="theme-color" content="#0b7285" />
+    <title>Clean City Report | Swachh Nagar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="app-shell">
-        <section id="screen-splash" class="screen active">
-            <div class="splash-card">
-                <div class="logo-circle">SN</div>
-                <h1>Swachh Nagar Tanakpur</h1>
-                <p class="splash-tagline">Smart cleanliness reporting for your city.</p>
-                <p>Complaint Management System</p>
-                <div class="splash-loading">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </section>
-
-        <section id="screen-login" class="screen login-screen">
-            <div class="card login-card">
-                <div class="login-top">
-                    <div class="user-icon" id="login-icon">👤</div>
-                    <div>
-                        <h2 id="login-title">User Login</h2>
-                        <p class="screen-subtitle">Sign in to report cleanliness issues in Tanakpur.</p>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <span class="input-icon">📧</span>
-                    <input id="login-username" type="text" placeholder="Email / Username / Phone" />
-                </div>
-                <div class="input-group">
-                    <span class="input-icon">🔒</span>
-                    <input id="login-password" type="password" placeholder="Password" />
-                </div>
-                <div class="extras-row">
-                    <label class="remember"><input type="checkbox" id="remember-me" /> Remember me</label>
-                    <button id="forgot-password" class="link-text" type="button">Forgot Password?</button>
-                </div>
-                <button id="btn-login" class="primary">LOGIN</button>
-                <button id="btn-show-register" class="secondary">Register</button>
-                <p class="admin-hint" id="admin-hint"></p>
-                <p class="message" id="login-message"></p>
-            </div>
-        </section>
-
-        <section id="screen-register" class="screen">
-            <div class="card">
-                <h2>Register</h2>
-                <label for="register-name">Name</label>
-                <input id="register-name" type="text" placeholder="Enter full name" />
-                <label for="register-email">Email</label>
-                <input id="register-email" type="email" placeholder="Enter email" />
-                <label for="register-mobile">Mobile Number</label>
-                <input id="register-mobile" type="tel" placeholder="Enter mobile number" />
-                <label for="register-password">Password</label>
-                <input id="register-password" type="password" placeholder="Create a password" />
-                <button id="btn-register" class="primary">Register</button>
-                <div class="actions-row">
-                    <p>Already have an account?</p>
-                    <button id="btn-back-login" class="link">Login</button>
-                </div>
-                <p class="message" id="register-message"></p>
-            </div>
-        </section>
-
-        <section id="screen-dashboard" class="screen">
-            <div class="homepage-shell">
-                <div class="hero-banner">
-                    <div class="hero-copy">
-                        <span class="hero-pill">Swachh Nagar Tanakpur</span>
-                        <h2 id="dashboard-welcome">Make Tanakpur Clean & Green 🌿</h2>
-                        <p id="dashboard-date">Report issues, track progress, and improve your city.</p>
-                        <div class="hero-stats">
-                            <div id="stat-resolved">
-                                <strong id="stat-resolved-count">120+</strong>
-                                <span>Issues resolved</span>
-                            </div>
-                            <div id="stat-community">
-                                <strong id="stat-community-count">540</strong>
-                                <span>Community reports</span>
-                            </div>
-                        </div>
-                        <div class="scrolling-text">
-                            Welcome to Swachh Nagar Tanakpur! Report cleanliness issues and help keep our city clean. |
-                            Latest updates: New features added for better tracking. | Stay connected with your
-                            community.
-                        </div>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="hero-image"></div>
-                    </div>
-                    <div class="hero-actions">
-                        <button id="btn-new-complaint" class="secondary small">New Complaint</button>
-                        <button id="btn-logout" class="secondary small">Logout</button>
-                    </div>
-                </div>
-
-                <div class="action-grid">
-                    <button id="btn-quick-report" class="action-card">
-                        <span>📝</span>
-                        <div>
-                            <strong>Report Complaint</strong>
-                            <p>Submit a new issue</p>
-                        </div>
-                    </button>
-                    <button id="btn-quick-status" class="action-card">
-                        <span>📋</span>
-                        <div>
-                            <strong>View Status</strong>
-                            <p>Track complaint progress</p>
-                        </div>
-                    </button>
-                    <button id="btn-quick-profile" class="action-card">
-                        <span>👤</span>
-                        <div>
-                            <strong>Your Profile</strong>
-                            <p>View account info</p>
-                        </div>
-                    </button>
-                    <button id="btn-quick-about-app" class="action-card">
-                        <span>ℹ️</span>
-                        <div>
-                            <strong>About App</strong>
-                            <p>Learn how it works</p>
-                        </div>
-                    </button>
-                    <button id="btn-quick-about-town" class="action-card">
-                        <span>🏙️</span>
-                        <div>
-                            <strong>About Tanakpur</strong>
-                            <p>Discover city highlights</p>
-                        </div>
-                    </button>
-                </div>
-
-                <div class="feed-section">
-                    <div class="feed-header">
-                        <div>
-                            <h3>City Feed</h3>
-                            <p>See recent posts and community updates from Tanakpur.</p>
-                        </div>
-                    </div>
-
-                    <div class="post-create-card">
-                        <textarea id="feed-complaint-text" rows="2" placeholder="Write your complaint..."></textarea>
-                        <div class="post-options">
-                            <input id="feed-title" type="text" placeholder="Add Title" />
-                            <input id="feed-location" type="text" placeholder="Add Location" />
-                        </div>
-                        <div class="post-actions">
-                            <label class="upload-pill">Before Image<input id="feed-before-image" type="file"
-                                    accept="image/*" /></label>
-                            <label class="upload-pill">After Image<input id="feed-after-image" type="file"
-                                    accept="image/*" /></label>
-                            <button id="btn-post-complaint" class="primary small">Post Complaint</button>
-                        </div>
-                        <p class="message" id="feed-message"></p>
-                    </div>
-
-                    <div class="feed-list" id="feed-list"></div>
-                </div>
-            </div>
-
-            <div class="bottom-nav">
-                <button id="nav-home" class="nav-button active">🏠<span>Home</span></button>
-                <button id="nav-add" class="nav-button">➕<span>Add</span></button>
-                <button id="nav-status" class="nav-button">📊<span>Status</span></button>
-                <button id="nav-profile" class="nav-button">👤<span>Profile</span></button>
-            </div>
-        </section>
-
-        <section id="screen-complaint" class="screen">
-            <div class="card">
-                <h2>Complaint Registration</h2>
-                <label for="complaint-name">Name</label>
-                <input id="complaint-name" type="text" placeholder="Enter your name" />
-                <label for="complaint-location">Location</label>
-                <div class="location-row">
-                    <input id="complaint-location" type="text" placeholder="Enter location or use auto-detect" />
-                    <button id="btn-detect-location" class="small">Auto Detect</button>
-                </div>
-                <label for="complaint-type">Complaint Type</label>
-                <select id="complaint-type">
-                    <option value="Garbage">Garbage</option>
-                    <option value="Drainage">Drainage</option>
-                    <option value="Street Cleaning">Street Cleaning</option>
-                </select>
-                <label for="complaint-description">Description</label>
-                <textarea id="complaint-description" rows="4" placeholder="Describe the issue"></textarea>
-                <label for="complaint-image">Upload Image</label>
-                <input id="complaint-image" type="file" accept="image/*" />
-                <button id="btn-submit-complaint" class="primary">Submit Complaint</button>
-                <button id="btn-back-dashboard" class="link">Back to Dashboard</button>
-                <p class="message" id="complaint-message"></p>
-            </div>
-        </section>
-
-        <section id="screen-status" class="screen">
-            <div class="card">
-                <h2>Complaint Status</h2>
-                <div id="status-list" class="status-list"></div>
-                <button id="btn-refresh-status" class="secondary">Refresh</button>
-                <button id="btn-back-dashboard-2" class="link">Back to Dashboard</button>
-            </div>
-        </section>
-
-        <section id="screen-about" class="screen">
-            <div class="card about-card">
-                <h2>About Tanakpur</h2>
-                <p>Tanakpur is a beautiful town located in Champawat district of Uttarakhand, India. Known for its
-                    scenic beauty and proximity to the Sharda River, it's a gateway to the Kumaon region.</p>
-                <h3>Swachh Nagar Initiative</h3>
-                <p>Swachh Nagar Tanakpur aims to make our town cleaner and greener through community participation.
-                    Report issues and help us maintain hygiene standards.</p>
-                <h3>Future Plans for Cleanliness</h3>
-                <ul>
-                    <li>Expand waste management systems with smart bins and recycling centers</li>
-                    <li>Implement regular cleanliness drives in public areas</li>
-                    <li>Promote eco-friendly practices and awareness programs</li>
-                    <li>Partner with local authorities for better sanitation infrastructure</li>
-                    <li>Use technology for real-time monitoring and quick response</li>
-                </ul>
-                <button id="btn-back-dashboard-3" class="link">Back to Dashboard</button>
-            </div>
-        </section>
-
-        <section id="screen-profile" class="screen">
-            <div class="card profile-card">
-                <div class="dashboard-header">
-                    <div>
-                        <h2>Your Profile</h2>
-                        <p class="screen-subtitle">Your account details and recent activity.</p>
-                    </div>
-                </div>
-                <div class="profile-details">
-                    <p><strong>Name:</strong> <span id="profile-name">Citizen</span></p>
-                    <p><strong>Email:</strong> <span id="profile-email">user@example.com</span></p>
-                    <p><strong>Mobile:</strong> <span id="profile-mobile">0000000000</span></p>
-                    <p><strong>Status:</strong> <span id="profile-status">Active User</span></p>
-                </div>
-                <button id="btn-profile-logout" class="secondary">Logout</button>
-                <button id="btn-back-dashboard-5" class="link">Back to Home</button>
-            </div>
-        </section>
-
-        <section id="screen-admin" class="screen">
-            <div class="card admin-card">
-                <div class="dashboard-header">
-                    <div>
-                        <h2>Admin Dashboard</h2>
-                        <p class="screen-subtitle">Secure access to complaint management and updates.</p>
-                    </div>
-                </div>
-                <div id="admin-complaints"></div>
-                <button id="btn-back-dashboard-4" class="link">Back to Dashboard</button>
-            </div>
-        </section>
+    <div id="loaderOverlay" class="loader-overlay d-none">
+        <div class="spinner-border text-white" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-glass py-3 shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <span class="brand-icon"><i class="fas fa-broom"></i></span>
+                <div>
+                    <div class="brand-title">Swachh Nagar</div>
+                    <small class="text-muted">Cleaning Reporting System</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+                    <li class="nav-item"><a class="nav-link active" href="#homeSection">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reportSection">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#previewSection">Complaints</a></li>
+                    <li class="nav-item"><button id="adminAreaBtn" class="btn btn-outline-light btn-sm">Admin
+                            Login</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <section id="homeSection" class="row align-items-center hero-section gy-4">
+            <div class="col-lg-6 order-2 order-lg-1 text-white">
+                <span class="badge bg-success mb-3"><i class="fas fa-sparkles me-2"></i>Clean & Safe City</span>
+                <h1 class="display-5 fw-bold">Report street cleaning issues instantly and keep Tanakpur sparkling.</h1>
+                <p class="lead text-white-75">Submit complaints for garbage, drainage, street sweeping, and sanitation
+                    problems. The admin dashboard helps local authorities track status from Pending to Completed.</p>
+                <div class="d-flex gap-3 flex-wrap mt-4">
+                    <a class="btn btn-light btn-lg" href="#reportSection"><i class="fas fa-circle-plus me-2"></i>Submit
+                        Complaint</a>
+                    <button id="previewButton" class="btn btn-outline-light btn-lg"><i class="fas fa-eye me-2"></i>View
+                        Reports</button>
+                </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+                <div class="hero-card p-4 shadow-lg rounded-4 bg-white bg-opacity-90">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h2 class="h4 mb-1">Quick City Snapshot</h2>
+                            <p class="mb-0 text-muted">Latest complaints and live report updates.</p>
+                        </div>
+                        <div class="status-pill bg-success text-white"><i class="fas fa-check me-1"></i>Live Dashboard
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="stat-card border-start border-4 border-primary p-3 rounded-4">
+                                <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i
+                                        class="fas fa-broom"></i></div>
+                                <h3 class="mb-1">120+</h3>
+                                <p class="mb-0 text-muted">Reports shared</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card border-start border-4 border-success p-3 rounded-4">
+                                <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-leaf"></i>
+                                </div>
+                                <h3 class="mb-1">78%</h3>
+                                <p class="mb-0 text-muted">Resolved quickly</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="info-box p-3 rounded-4 bg-primary bg-opacity-10">
+                                <div class="d-flex align-items-center justify-content-between gap-3">
+                                    <div>
+                                        <h4 class="mb-1">Submit a complaint with images</h4>
+                                        <p class="mb-0 text-muted">Our system stores report timestamps and updates
+                                            status dynamically.</p>
+                                    </div>
+                                    <div class="text-primary fs-3"><i class="fas fa-clock"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reportSection" class="row gy-4 mt-5">
+            <div class="col-lg-7">
+                <div class="card shadow-sm rounded-4 p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h2 class="h3 mb-1">Complaint Submission</h2>
+                            <p class="text-muted mb-0">Fill the form and send your issue to the city cleaning team.</p>
+                        </div>
+                        <span class="badge bg-info text-dark"><i class="fas fa-info-circle me-1"></i>Firebase
+                            powered</span>
+                    </div>
+                    <form id="complaintForm" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="reportName" class="form-label">Name</label>
+                            <input id="reportName" type="text" class="form-control shadow-sm" placeholder="Your name"
+                                required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reportLocation" class="form-label">Location</label>
+                            <input id="reportLocation" type="text" class="form-control shadow-sm"
+                                placeholder="Neighborhood or street" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reportCategory" class="form-label">Issue Type</label>
+                            <select id="reportCategory" class="form-select shadow-sm" required>
+                                <option value="Garbage">Garbage</option>
+                                <option value="Drainage">Drainage</option>
+                                <option value="Street Cleaning">Street Cleaning</option>
+                                <option value="Public Toilet">Public Toilet</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reportImage" class="form-label">Image Upload</label>
+                            <input id="reportImage" class="form-control shadow-sm" type="file" accept="image/*">
+                        </div>
+                        <div class="col-12">
+                            <label for="reportDescription" class="form-label">Description</label>
+                            <textarea id="reportDescription" rows="5" class="form-control shadow-sm"
+                                placeholder="Describe the issue in detail" required></textarea>
+                        </div>
+                        <div class="col-12 d-flex flex-column flex-sm-row align-items-center gap-3">
+                            <button type="submit" class="btn btn-primary btn-lg shadow-sm"><i
+                                    class="fas fa-paper-plane me-2"></i>Submit Complaint</button>
+                            <button id="clearFormButton" type="button" class="btn btn-outline-secondary btn-lg">Clear
+                                Form</button>
+                        </div>
+                    </form>
+                    <div id="reportAlert" class="mt-3"></div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="card rounded-4 p-4 shadow-sm bg-success bg-opacity-10">
+                            <h3 class="h5">Why use this system?</h3>
+                            <ul class="list-unstyled mb-0 mt-3 text-muted">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Fast complaint
+                                    submission</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Status updates in
+                                    real time</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Admin dashboard
+                                    for action items</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Mobile-first
+                                    responsive design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="info-card p-4 rounded-4 shadow-sm">
+                            <div class="icon-circle bg-primary bg-opacity-10 text-primary mb-3"><i
+                                    class="fas fa-user-shield"></i></div>
+                            <h4 class="h6">Admin Control</h4>
+                            <p class="text-muted mb-0">Accept, reject, or complete requests with one click.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="info-card p-4 rounded-4 shadow-sm">
+                            <div class="icon-circle bg-info bg-opacity-10 text-info mb-3"><i class="fas fa-filter"></i>
+                            </div>
+                            <h4 class="h6">Filter & Search</h4>
+                            <p class="text-muted mb-0">View complaints by status and keyword.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="previewSection" class="row gy-4 mt-5">
+            <div class="col-12">
+                <div
+                    class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3">
+                    <div>
+                        <h2 class="h4 mb-1">Complaint Feed</h2>
+                        <p class="text-muted mb-0">Browse recent reports submitted by citizens.</p>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row align-items-center gap-2 w-100 w-md-auto">
+                        <select id="statusFilter" class="form-select form-select-sm w-100 w-sm-auto">
+                            <option value="All">All statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Accepted">Accepted</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                        <input id="searchInput" type="search" class="form-control form-control-sm shadow-sm"
+                            placeholder="Search complaints" />
+                    </div>
+                </div>
+                <div id="complaintPreview" class="row g-4"></div>
+            </div>
+        </section>
+
+        <section id="adminSection" class="row gy-4 mt-5 d-none">
+            <div class="col-12">
+                <div class="card rounded-4 p-4 shadow-sm">
+                    <div
+                        class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+                        <div>
+                            <h2 class="h4 mb-1">Admin Dashboard</h2>
+                            <p class="text-muted mb-0">Sign in to manage complaints with action buttons and live status
+                                updates.</p>
+                        </div>
+                        <div id="adminStatusBadge" class="badge bg-secondary text-white">Logged out</div>
+                    </div>
+
+                    <div id="adminLoginCard" class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="card rounded-4 p-4 bg-light shadow-sm">
+                                <h3 class="h5 mb-3">Admin Login</h3>
+                                <form id="adminLoginForm" class="row g-3">
+                                    <div class="col-12">
+                                        <label for="adminEmail" class="form-label">Admin Email</label>
+                                        <input id="adminEmail" type="email" class="form-control"
+                                            placeholder="admin@example.com" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="adminPassword" class="form-label">Password</label>
+                                        <input id="adminPassword" type="password" class="form-control"
+                                            placeholder="Password" required>
+                                    </div>
+                                    <div class="col-12 d-flex gap-2">
+                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                        <button id="adminCancel" type="button"
+                                            class="btn btn-outline-secondary">Close</button>
+                                    </div>
+                                </form>
+                                <div id="adminLoginAlert" class="mt-3"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div>
+                                <h3 class="h5">Access Admin Tools</h3>
+                                <p class="text-muted">Use Firebase Authentication for secure admin access. Once signed
+                                    in, you can approve, reject, and complete complaints from the live table.</p>
+                                <ul class="mb-0 text-muted">
+                                    <li><i class="fas fa-check me-2 text-success"></i>Real-time Firestore updates</li>
+                                    <li><i class="fas fa-check me-2 text-success"></i>Dynamic status change</li>
+                                    <li><i class="fas fa-check me-2 text-success"></i>Search and filter support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="adminDashboard" class="d-none">
+                        <div
+                            class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3 mb-4">
+                            <div>
+                                <h3 class="h5 mb-1">All Complaints</h3>
+                                <p class="text-muted mb-0">Use the table below to manage every report.</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button id="adminSignOut" class="btn btn-outline-danger btn-sm"><i
+                                        class="fas fa-sign-out-alt me-1"></i>Sign out</button>
+                                <button id="refreshAdmin" class="btn btn-outline-primary btn-sm"><i
+                                        class="fas fa-sync-alt me-1"></i>Refresh</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive rounded-4 border shadow-sm">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">Report ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Submitted</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminComplaintRows"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-4 text-center text-white-75">
+        <div class="container">
+            <p class="mb-1"><strong>Swachh Nagar</strong> � 2026 � Complaint Reporting System</p>
+            <p class="mb-0">Built with Bootstrap, Firebase, and Font Awesome.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

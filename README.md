@@ -1,27 +1,84 @@
-# Swachh Nagar â€“ Complaint Management System
+# Cleaning Reporting System
 
-A simple responsive web app to report cleanliness-related issues such as garbage, drainage, and street cleaning. Built with HTML, CSS, and JavaScript.
+A modern, responsive web app for Swachh Nagar that lets citizens submit cleanliness complaints and admins manage them using Firebase.
+
+## Folder structure
+
+- `index.html` — main website with complaint form, preview feed, and admin dashboard
+- `styles.css` — custom theme and responsive styling
+- `script.js` — Firebase authentication, Firestore complaint storage, dynamic UI logic
+- `README.md` — setup instructions
 
 ## Features
 
-- Splash screen with auto navigation to login
-- Login and registration pages
-- Dashboard with options for complaint registration, status view, and about page
-- Complaint form with location, type, description, and image upload
-- Complaint status list with Pending / Accepted / In Progress / Completed / Rejected states
-- Admin panel with user contact details, status updates, and direct contact options (email/call)
-- Green and white Swachh Bharat inspired theme
+- Clean homepage with complaint submission form
+- Bootstrap-based responsive UI with green/blue styling
+- Public complaint feed with search and status filter
+- Firebase Firestore storage for complaints
+- Firebase Authentication for admin login
+- Admin dashboard with Accept / Completed / Reject controls
+- Dynamic complaint status updates
+- Timestamp shown for each complaint
+- Loading animation and success alerts
+- Mobile friendly layout
+- Font Awesome icons
+
+## Setup steps for Firebase
+
+1. Open the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+2. In your project, go to **Authentication** > **Get Started** and enable **Email/Password** sign-in.
+3. Add an admin user under **Users** with an email and password.
+4. Go to **Firestore Database** and create a database in **Production** or **Test** mode.
+5. In the Firestore database, create a collection named `complaints`.
+
+## Add Firebase configuration
+
+1. Open `script.js`.
+2. Replace the `firebaseConfig` object values with your Firebase project's config.
+
+```js
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+```
+
+## Running locally
+
+Because the app uses ES modules, open it using a local web server instead of directly opening the file in the browser.
+
+Option 1: Python
+
+```bash
+python -m http.server 5500
+```
+
+Option 2: Node
+
+```bash
+npx http-server -p 5500
+```
+
+Then open `http://127.0.0.1:5500` in your browser.
+
+## Admin login
+
+- Click **Admin Login** in the top navigation.
+- Enter the email and password for the admin user created in Firebase Authentication.
+- After login, the admin dashboard appears with all complaints from Firestore.
 
 ## How to use
 
-1. Open `index.html` in a browser.
-2. Wait for the splash screen to navigate to login.
-3. Register a new user, or use admin credentials:
-   - Name: `himanshi mahar`
-   - Password: `himanshi@2005`
-4. Submit complaints and view statuses.
+- Fill the complaint form with name, location, issue type, description, and optional image.
+- Click **Submit Complaint** and wait for confirmation.
+- Use the **Complaint Feed** section to search and filter reports.
+- Admin can accept, reject, or complete complaints directly from the dashboard.
 
 ## Notes
 
-- This app stores data locally in the browser using `localStorage`.
-- Admin can view all complaints, update statuses, and contact users via email or phone.
+- The app stores complaints in Firestore, with each record including a timestamp and optional image URL.
+- The admin dashboard updates in real time whenever Firestore data changes.
